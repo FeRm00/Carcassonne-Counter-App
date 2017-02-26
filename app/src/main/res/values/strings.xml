@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Carcassonne Counter</string>
+
+    <string name="castleNum">Number of Castles</string>
+    <string name="shieldNum">Number of Shields</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+</resources>

@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/generalColor"
+    tools:context="com.example.android.courtcounter.MainActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="34dp"
+        android:foregroundGravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Reset"
+        android:onClick="resetScore"
+        android:id="@+id/button2"
+        android:drawableLeft="@drawable/player"
+        android:drawableTint="#ffffff"
+        android:drawablePadding="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textPlayer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-medium"
+                android:text="Player 1" />
+
+            <TextView
+                android:id="@+id/player_1_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:textSize="50sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:text="0"/>
+
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@android:color/black"
+               android:orientation="vertical"
+               android:layout_margin="8dp"
+               android:padding="1dp">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@color/background"
+                   android:paddingTop="4dp"
+                   android:text="@string/castleNum"
+                   android:textColor="@color/numberText"
+                   android:textAlignment="center"/>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="horizontal"
+                   android:background="@color/background">
+
+
+                   <Button
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="20dp"
+                       android:layout_margin="6dp"
+                       android:background="@color/colorSmallButton"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:text="-"
+                       android:onClick="decrementCastle1"/>
+
+                   <TextView
+                       android:id="@+id/numberOfCastles1"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:textAlignment="center"
+                       android:text="0"/>
+
+                   <Button
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="20dp"
+                       android:layout_margin="6dp"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:background="@color/colorSmallButton"
+                       android:text="@string/plus"
+                       android:onClick="incrementCastle1"/>
+
+               </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:paddingTop="4dp"
+                    android:text="@string/shieldNum"
+                    android:textColor="@color/numberText"
+                    android:textAlignment="center"/>
+
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="horizontal"
+                   android:background="@color/background">
+
+                   <Button
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="20dp"
+                       android:layout_margin="6dp"
+                       android:background="@color/colorSmallButton"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:text="-"
+                       android:onClick="decrementShield1"/>
+
+                   <TextView
+                       android:id="@+id/numberOfShields1"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:layout_gravity="center_vertical"
+                       android:textAlignment="center"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:text="0"/>
+                   <Button
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="20dp"
+                       android:layout_margin="6dp"
+                       android:textSize="15sp"
+                       android:textColor="@color/numberText"
+                       android:background="@color/colorSmallButton"
+                       android:text="+"
+                       android:onClick="incrementShield1"/>
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:background="@color/background">
+
+                   <Button
+                       android:layout_height="50dp"
+                       android:layout_width="match_parent"
+                       android:layout_marginRight="4dp"
+                       android:layout_marginLeft="4dp"
+                       android:drawableLeft="@drawable/castle"
+                       android:drawableRight="@drawable/shield"
+                       android:text="Castle"
+                       android:onClick="addCastlePoints1"
+                       android:textColor="#c6cccc" />
+               </LinearLayout>
+
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementCloister1"/>
+
+                    <TextView
+                        android:id="@+id/numberOfCloisters1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="0"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="+"
+                        android:onClick="incrementCloister1"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:drawableLeft="@drawable/church"
+                        android:text="Cloister"
+                        android:onClick="addCloisterPoints1"
+                        android:textColor="#c6cccc"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementRoad1"/>
+
+                    <TextView
+                        android:id="@+id/numberOfRoads1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="0"/>
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="+"
+                        android:onClick="incrementRoad1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="Road"
+                        android:drawableLeft="@drawable/road"
+                        android:onClick="addRoadPoints1"
+                        android:textColor="#c6cccc"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-medium"
+                android:text="Player 2" />
+
+            <TextView
+                android:id="@+id/player_2_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="4dp"
+                android:textSize="50sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-light"
+                android:text="0"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:padding="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:paddingTop="4dp"
+                    android:text="@string/castleNum"
+                    android:textColor="@color/numberText"
+                    android:textAlignment="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementCastle2"/>
+
+                    <TextView
+                        android:id="@+id/numberOfCastles2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:textAlignment="center"
+                        android:text="0"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="@string/plus"
+                        android:onClick="incrementCastle2"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:paddingTop="4dp"
+                    android:text="@string/shieldNum"
+                    android:textColor="@color/numberText"
+                    android:textAlignment="center"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementShield2"/>
+
+                    <TextView
+                        android:id="@+id/numberOfShields2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="0"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="+"
+                        android:onClick="incrementShield2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_height="50dp"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:drawableLeft="@drawable/castle"
+                        android:drawableRight="@drawable/shield"
+                        android:text="Castle"
+                        android:onClick="addCastlePoints2"
+                        android:textColor="#c6cccc" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementCloister2"/>
+
+                    <TextView
+                        android:id="@+id/numberOfCloisters2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="0"/>
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="+"
+                        android:onClick="incrementCloister2"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:drawableLeft="@drawable/church"
+                        android:text="Cloister"
+                        android:onClick="addCloisterPoints2"
+                        android:textColor="#c6cccc"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/background">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:background="@color/colorSmallButton"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="-"
+                        android:onClick="decrementRoad2"/>
+
+                    <TextView
+                        android:id="@+id/numberOfRoads2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:text="0"/>
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:textSize="15sp"
+                        android:textColor="@color/numberText"
+                        android:background="@color/colorSmallButton"
+                        android:text="+"
+                        android:onClick="incrementRoad2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="Road"
+                        android:drawableLeft="@drawable/road"
+                        android:onClick="addRoadPoints2"
+                        android:textColor="#c6cccc"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
